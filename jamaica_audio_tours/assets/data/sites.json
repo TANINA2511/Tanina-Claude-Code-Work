@@ -1,0 +1,52 @@
+[
+  {
+    "id": "port_royal",
+    "name": "Port Royal",
+    "category": "Patrimonio histórico",
+    "latitude": 17.9388,
+    "longitude": -76.8419,
+    "triggerRadiusMeters": 150,
+    "shortDescription": "La legendaria 'ciudad más malvada de la Tierra', hundida por un terremoto en 1692.",
+    "narrationEs": "Bienvenido a Port Royal, conocida en el siglo XVII como la ciudad más rica y más malvada del mundo. Aquí vivieron piratas legendarios como Henry Morgan. En 1692, un devastador terremoto sumergió gran parte de la ciudad bajo el mar, dejando tras de sí una de las ciudades hundidas más importantes del Caribe. Hoy, sus ruinas submarinas y fortalezas coloniales cuentan la historia de un pasado turbulento y fascinante."
+  },
+  {
+    "id": "blue_mountains",
+    "name": "Blue and John Crow Mountains",
+    "category": "Patrimonio natural - UNESCO",
+    "latitude": 18.0708,
+    "longitude": -76.5764,
+    "triggerRadiusMeters": 300,
+    "shortDescription": "Patrimonio Mundial de la UNESCO, hogar del café azul y de los Cimarrones.",
+    "narrationEs": "Se encuentra usted en las Montañas Azules y John Crow, declaradas Patrimonio Mundial por la UNESCO. Estas montañas albergan una biodiversidad excepcional, con especies que no existen en ningún otro lugar del planeta. Fueron también el refugio histórico de los Cimarrones, esclavizados que escaparon y resistieron con éxito al dominio colonial. Además, esta región es famosa por producir uno de los cafés más exclusivos del mundo: el café Blue Mountain."
+  },
+  {
+    "id": "rose_hall",
+    "name": "Rose Hall Great House",
+    "category": "Patrimonio histórico",
+    "latitude": 18.4953,
+    "longitude": -77.8556,
+    "triggerRadiusMeters": 120,
+    "shortDescription": "Una majestuosa mansión de plantación envuelta en leyendas de fantasmas.",
+    "narrationEs": "Esta es la Gran Casa de Rose Hall, una de las mansiones de plantación más famosas de Jamaica. Construida en el siglo XVIII, está rodeada de leyendas sobre Annie Palmer, conocida como la 'Bruja Blanca de Rose Hall'. Más allá de sus historias de fantasmas, esta casa restaurada ofrece una ventana a la compleja historia colonial y azucarera de la isla."
+  },
+  {
+    "id": "dunns_river",
+    "name": "Dunn's River Falls",
+    "category": "Patrimonio natural",
+    "latitude": 18.4136,
+    "longitude": -77.1303,
+    "triggerRadiusMeters": 200,
+    "shortDescription": "Cascadas escalonadas de agua dulce que desembocan directamente en el mar Caribe.",
+    "narrationEs": "Está usted frente a las cascadas de Dunn's River, un extraordinario conjunto de terrazas naturales de piedra caliza por donde el agua dulce desciende hasta encontrarse con el mar Caribe. Generaciones de visitantes han subido tomados de la mano por estas cascadas escalonadas. Este lugar representa la unión perfecta entre la exuberante naturaleza tropical de Jamaica y sus aguas cristalinas."
+  },
+  {
+    "id": "seville_heritage",
+    "name": "Seville Heritage Park",
+    "category": "Patrimonio histórico",
+    "latitude": 18.4719,
+    "longitude": -77.1864,
+    "triggerRadiusMeters": 150,
+    "shortDescription": "Sitio que reúne capas de historia taína, española, africana y británica.",
+    "narrationEs": "Bienvenido al Parque Patrimonial de Seville, un lugar único donde convergen cuatro culturas: la taína, la española, la africana y la británica. Aquí se estableció uno de los primeros asentamientos europeos en Jamaica, en el año 1509. Caminar por este parque es recorrer quinientos años de encuentros, conflictos y mezclas culturales que dieron forma a la identidad jamaicana actual."
+  }
+]
