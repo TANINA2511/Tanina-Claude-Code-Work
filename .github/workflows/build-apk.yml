@@ -1,0 +1,55 @@
+name: Build EcoEcos de Jamaica APK
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'jamaica_audio_tours_kivy/**'
+      - '.github/workflows/build-apk.yml'
+  workflow_dispatch: {}
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        working-directory: jamaica_audio_tours_kivy
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            git zip unzip openjdk-17-jdk python3-pip autoconf libtool \
+            pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev \
+            libtinfo5 cmake libffi-dev libssl-dev build-essential
+
+      - name: Install buildozer and Cython
+        run: pip install --upgrade buildozer cython==0.29.36
+
+      - name: Cache buildozer global directory
+        uses: actions/cache@v4
+        with:
+          path: ~/.buildozer
+          key: buildozer-global-${{ hashFiles('jamaica_audio_tours_kivy/buildozer.spec') }}
+
+      - name: Cache buildozer project directory
+        uses: actions/cache@v4
+        with:
+          path: jamaica_audio_tours_kivy/.buildozer
+          key: buildozer-project-${{ hashFiles('jamaica_audio_tours_kivy/buildozer.spec') }}
+
+      - name: Build debug APK
+        run: buildozer -v android debug
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ecoecos-jamaica-debug-apk
+          path: jamaica_audio_tours_kivy/bin/*.apk
