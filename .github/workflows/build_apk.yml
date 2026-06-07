@@ -23,6 +23,21 @@ jobs:
           flutter-version: '3.24.0'
           channel: 'stable'
 
+      - name: Generate Android/iOS platform projects
+        run: flutter create . --platforms=android,ios --org com.jamaicaheritage --project-name jamaica_audio_tours
+
+      - name: Add location permissions to AndroidManifest
+        run: |
+          MANIFEST=android/app/src/main/AndroidManifest.xml
+          sed -i 's#<manifest xmlns:android="http://schemas.android.com/apk/res/android">#<manifest xmlns:android="http://schemas.android.com/apk/res/android">\n    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>\n    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>\n    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>#' "$MANIFEST"
+          cat "$MANIFEST"
+
+      - name: Add location usage descriptions to Info.plist
+        run: |
+          PLIST=ios/Runner/Info.plist
+          sed -i 's#</dict>#\t<key>NSLocationWhenInUseUsageDescription</key>\n\t<string>Necesitamos tu ubicación para activar automáticamente las narraciones de audio cuando llegues a un sitio del recorrido.</string>\n\t<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>\n\t<string>Necesitamos tu ubicación, incluso en segundo plano, para avisarte con narración de audio cuando te acerques a un sitio histórico o natural.</string>\n\t<key>UIBackgroundModes</key>\n\t<array>\n\t\t<string>location</string>\n\t\t<string>audio</string>\n\t</array>\n</dict>#' "$PLIST"
+          cat "$PLIST"
+
       - run: flutter pub get
 
       - run: flutter build apk --release
