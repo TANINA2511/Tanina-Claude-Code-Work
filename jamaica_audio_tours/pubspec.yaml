@@ -21,13 +21,6 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^4.0.0
 
-# geolocator_android 4.x ships a Gradle config incompatible with the
-# Android Gradle Plugin used by current Flutter stable templates
-# ("compileSdkVersion is not specified"). Force a version with a
-# modern Gradle setup.
-dependency_overrides:
-  geolocator_android: ^5.0.0
-
 flutter:
   uses-material-design: true
   assets:
